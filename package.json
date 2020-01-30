@@ -1,0 +1,22 @@
+{
+  "name": "apitestingjs",
+  "version": "1.0.0",
+  "description": "Sample Project to test Apis",
+  "main": "index.js",
+  "dependencies": {
+    "@jest/core": "^25.1.0",
+    "body-parser": "^1.17.1",
+    "chai": "^3.5.0",
+    "import-local": "^3.0.2",
+    "jest-cli": "^25.1.0",
+    "mocha": "^7.0.1",
+    "mocha-jenkins-reporter": "^0.4.2",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "prestart": "npm install;",
+    "test": "jest"
+  },
+  "author": "satwik",
+  "license": "ISC"
+}
