@@ -21,7 +21,7 @@ it('should be even', () => {
     expect(2 % 2).toBe(0);
 });
 
-it.each([2,4,6,8,9])('%i should be even',(n) => {
+it.each([2,4,6,8])('%i should be even',(n) => {
     expect(n % 2).toBe(0);
 });
 
