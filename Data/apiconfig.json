@@ -1,0 +1,7 @@
+{
+    "baseURL":"https://petstore.swagger.io/v2/pet",
+    "randomNumberRange":9999,
+    "passCode":200,
+    "failCode":404,
+    "petName":"Test Dog"
+}
