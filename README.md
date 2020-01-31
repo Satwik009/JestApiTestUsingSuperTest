@@ -21,12 +21,14 @@ npm install
 npm start
 
 2. On different command prompt, in this project folder, run below command to do setup and execution
-Setup-----------
-#Install puppeteer
+
+--Setup-----------
+# Install puppeteer
 npm i puppeteer
+# Install current project
 npm install
 
-Setup------------
+--Setup------------
 
 Execution--------
 
