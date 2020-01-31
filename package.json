@@ -13,12 +13,18 @@
     "mocha": "^7.0.1",
     "mocha-jenkins-reporter": "^0.4.2",
     "read-excel-file": "^4.0.5",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "chalk": "^3.0.0",
+    "jest": "^25.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.0"
   },
   "scripts": {
     "prestart": "npm install;",
     "test": "jest"
   },
   "author": "satwik",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+  }
 }
