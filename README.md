@@ -15,3 +15,4 @@ you can also run the same through terminal by navigating on the same folder.
 
 ********* For Contributors *********
   If you are working on this project please create your separate branch and then proceed.
+  
