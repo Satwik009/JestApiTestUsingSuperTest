@@ -1,0 +1,7 @@
+.idea
+*.swp
+*.stackdump
+
+node_modules/
+
+reports/
