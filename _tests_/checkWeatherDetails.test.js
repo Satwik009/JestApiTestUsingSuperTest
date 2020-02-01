@@ -43,6 +43,7 @@ describe("Data Driven Approach for testing Weather API", () => {
       var requestParam =
         endPoint + "lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
       console.log(requestParam);
+
       const response = await request(baseURL)
         .get(requestParam)
         .set("accept", "application/json");

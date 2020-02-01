@@ -12,10 +12,9 @@
     "import-local": "^3.0.2",
     "jest": "^25.1.0",
     "jest-cli": "^25.1.0",
-    "jest-puppeteer": "^4.4.0",
+    "jest-html-reporters": "^1.2.1",
     "mocha": "^7.0.1",
     "mocha-jenkins-reporter": "^0.4.2",
-    "puppeteer": "^2.1.0",
     "read-excel-file": "^4.0.5",
     "supertest": "^3.0.0"
   },
@@ -23,7 +22,21 @@
     "prestart": "npm install;",
     "test": "jest"
   },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./output",
+          "filename": "index.html",
+          "expand": true
+        }
+      ]
+    ]
+  },
   "author": "satwik",
   "license": "ISC",
+  "testResultsProcessor": "jest-html-reporters",
   "devDependencies": {}
 }

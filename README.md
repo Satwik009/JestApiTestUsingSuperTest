@@ -28,6 +28,21 @@ npm i puppeteer
 # Install current project
 npm install
 
+# Install allure on windows manually from below
+https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
+Download latest version of allure (we used 2.13.1)
+Unpack the archive to allure-commandline directory.
+Navigate to bin directory.
+Use allure.bat for Windows or allure for other Unix platforms.
+Add allure to system PATH.
+
+
+Now to serve report, run below command
+allure serve
+
+To generate report for offline, run below command
+allure generate
+
 --Setup------------
 
 Execution--------
