@@ -17,19 +17,26 @@ test("create new store from POST Request", () => {
   cd.createNewStores();
 });
 
-it('should be even', () => {
-    expect(2 % 2).toBe(0);
+it("should be even", () => {
+  expect(2 % 2).toBe(0);
 });
 
-it.each([2,4,6,8])('%i should be even',(n) => {
-    expect(n % 2).toBe(0);
+it.each([2, 4, 6, 8])("%i should be even", n => {
+  expect(n % 2).toBe(0);
 });
 
-it.each([[2,4], [6,36], [8,64]])('can square %i to %s', (n, expected) => {
-    expect(n*n).toBe(expected);
+it.each([
+  [2, 4],
+  [6, 36],
+  [8, 64]
+])("can square %i to %s", (n, expected) => {
+  expect(n * n).toBe(expected);
 });
 
-it.each([[2,4], [6,36], [8,64]])('can square %i to %s', (n, expected) => {
-    expect(n*n).toBe(expected);
+it.each([
+  [2, 4],
+  [6, 36],
+  [8, 64]
+])("can square %i to %s", (n, expected) => {
+  expect(n * n).toBe(expected);
 });
-

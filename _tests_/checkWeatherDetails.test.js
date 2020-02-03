@@ -1,6 +1,6 @@
 const request = require("supertest");
 const excelReaderIns = require("read-excel-file/node");
-const CSVUtil = require("../config/CSVUtil");
+const csvUtils = require("../utils/csvUtils");
 
 let method;
 let baseURL;
@@ -33,7 +33,7 @@ describe("Data Driven Approach for testing Weather API", () => {
     //Close Server and Printout the report
   });
 
-  let csvUtil = new CSVUtil();
+  let csvUtil = new csvUtils();
   var oneRow = new Array();
   test("Get Weather Details", async () => {
     for (var counter = 0; counter < rowSet.length; counter++) {
