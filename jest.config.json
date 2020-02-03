@@ -10,6 +10,7 @@
         "additionalResultsProcessors": [
           "jest-html-reporter"
         ],
+        "testResultsProcessor": "jest-sonar-reporter",
         "coverageLink": "../../coverage/lcov-report/index.html",
         "jestStareConfigJson": "jest-stare.json",
         "jestGlobalConfigJson": "globalStuff.json"

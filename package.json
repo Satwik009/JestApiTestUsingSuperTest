@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@jest/core": "^25.1.0",
+    "jest-sonar-reporter": "^2.0.0",
     "body-parser": "^1.17.1",
     "chai": "^3.5.0",
     "chalk": "^3.0.0",
@@ -13,6 +14,7 @@
     "jest": "^25.1.0",
     "jest-cli": "^25.1.0",
     "jest-html-reporters": "^1.2.1",
+    "jest-stare": "^1.26.0",
     "mocha": "^7.0.1",
     "mocha-jenkins-reporter": "^0.4.2",
     "read-excel-file": "^4.0.5",
@@ -20,7 +22,7 @@
   },
   "scripts": {
     "prestart": "npm install;",
-    "test": "jest"
+    "test": "jest --coverage -u"
   },
   "jest": {
     "reporters": [
@@ -33,7 +35,16 @@
           "expand": true
         }
       ]
-    ]
+    ],
+    "jest": {
+      "testEnvironment": "node",
+      "testResultsProcessor": "jest-sonar-reporter"
+    },
+    "jestSonar": {
+      "reportPath": "reports",
+      "reportFile": "test-report.xml",
+      "indent": 4
+    }
   },
   "author": "satwik",
   "license": "ISC",
