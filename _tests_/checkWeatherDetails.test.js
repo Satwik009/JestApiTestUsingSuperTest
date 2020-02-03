@@ -1,6 +1,7 @@
 const request = require("supertest");
 const excelReaderIns = require("read-excel-file/node");
 const csvUtils = require("../utils/csvUtils");
+const logger = require("../utils/logger");
 
 let method;
 let baseURL;
@@ -12,16 +13,23 @@ let city;
 let httpstatus;
 let rowSet = new Array();
 
+const lg = new logger();
+let csvUtil = new csvUtils();
+
 describe("Data Driven Approach for testing Weather API", () => {
   async function separateOutVariables(rowField) {
-    method = rowField[0];
-    baseURL = rowField[1];
-    endPoint = rowField[2];
-    apiKey = rowField[3];
-    latitude = rowField[4];
-    longitude = rowField[5];
-    city = rowField[6];
-    httpstatus = rowField[7];
+    try {
+      method = rowField[0];
+      baseURL = rowField[1];
+      endPoint = rowField[2];
+      apiKey = rowField[3];
+      latitude = rowField[4];
+      longitude = rowField[5];
+      city = rowField[6];
+      httpstatus = rowField[7];
+    } catch (error) {
+      lg.log(error);
+    }
   }
 
   beforeAll(async () => {
@@ -33,7 +41,6 @@ describe("Data Driven Approach for testing Weather API", () => {
     //Close Server and Printout the report
   });
 
-  let csvUtil = new csvUtils();
   var oneRow = new Array();
   test("Get Weather Details", async () => {
     for (var counter = 0; counter < rowSet.length; counter++) {
@@ -42,7 +49,7 @@ describe("Data Driven Approach for testing Weather API", () => {
       await separateOutVariables(oneRow);
       var requestParam =
         endPoint + "lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
-      console.log(requestParam);
+      lg.logStep(requestParam);
 
       const response = await request(baseURL)
         .get(requestParam)
