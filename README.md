@@ -28,6 +28,26 @@ npm i puppeteer
 # Install current project
 npm install
 
+3. Jest Running commands :
+jest
+Run only the tests that were specified with a pattern or filename:
+
+jest my-test #or
+jest path/to/my-test.js
+Run tests related to changed files based on hg/git (uncommitted files):
+
+jest -o
+Run tests related to path/to/fileA.js and path/to/fileB.js:
+
+jest --findRelatedTests path/to/fileA.js path/to/fileB.js
+Run tests that match this spec name (match against the name in describe or test, basically).
+
+jest -t name-of-spec
+Run watch mode:
+
+jest --watch #runs jest -o by default
+jest --watchAll #runs all tests
+
 # Install allure on windows manually from below
 https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
 Download latest version of allure (we used 2.13.1)
