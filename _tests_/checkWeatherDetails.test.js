@@ -54,7 +54,7 @@ describe("Data Driven Approach for testing Weather API", () => {
       const response = await request(baseURL)
         .get(requestParam)
         .set("accept", "application/json");
-
+      lg.log("Response Status: " + response.status);
       expect(response.status).toBe(httpstatus);
       if (response.status == 200) {
         expect(response.body.name).toEqual(city);

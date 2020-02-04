@@ -4,12 +4,17 @@ var util = require("util");
 var log_file = fs.createWriteStream("./debug.log", { flags: "w" });
 var log_stdout = process.stdout;
 
+var isVerboseEnabled = false;
+
 class logger {
   async logStep(d) {
     this.log("--STEP--" + d);
   }
   async error(d) {
-    this.log("--ERROR--" + d);
+    this.log("--ERROR OCCURED--" + d);
+  }
+  async verbose(d) {
+    if (isVerboseEnabled) this.log("--VERBOSE--" + d);
   }
 
   async log(d) {

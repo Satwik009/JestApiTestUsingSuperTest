@@ -3,8 +3,11 @@ const logger = require("./logger");
 
 let lg = new logger();
 class excelUtils {
-  async sheetAs2dArray(filePath, sheetName) {
-    return this.sheetAs2dArray(filePath, sheetName, true);
+  sheetAs2dArray(filePath, sheetName) {
+    let values = this.sheetAs2dArray(filePath, sheetName, true);
+    return values.then(vals => {
+      return vals;
+    });
   }
 
   async sheetAs2dArray(filePath, sheetName, removeHeaderRow) {
@@ -17,14 +20,19 @@ class excelUtils {
           .value();
 
         // Log the value.
-        lg.log(value);
+        lg.verbose(value);
 
         // Get 2D array of all values in the worksheet.
         const values = workbook
           .sheet(sheetName)
           .usedRange()
           .value();
-        lg.log("2D Array of all values in the given sheet " + sheetName + " -----> " + values);
+        lg.verbose(
+          "2D Array of all values in the given sheet " +
+            sheetName +
+            " -----> " +
+            values
+        );
 
         if (removeHeaderRow) {
           return values.splice(0, 1);
@@ -32,7 +40,7 @@ class excelUtils {
         return values;
       });
     } catch (error) {
-      lg.log("ERROR OCCURED: " + error);
+      lg.error(error);
     }
   }
 }

@@ -2,19 +2,24 @@
   "reporters": [
     "default",
     [
-
+      "jest-html-reporters",
+      {
+        "publicPath": "./output",
+        "filename": "index.html",
+        "expand": true
+      }
+    ],
+    [
       "jest-stare",
       {
         "resultDir": "reports/jest-stare",
         "reportTitle": "jestReport",
-        "additionalResultsProcessors": [
-          "jest-html-reporter"
-        ],
+        "additionalResultsProcessors": ["jest-html-reporters"],
         "testResultsProcessor": "jest-sonar-reporter",
         "coverageLink": "../../coverage/lcov-report/index.html",
         "jestStareConfigJson": "jest-stare.json",
         "jestGlobalConfigJson": "globalStuff.json"
-      } 
+      }
     ]
   ]
 }

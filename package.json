@@ -23,7 +23,7 @@
   },
   "scripts": {
     "prestart": "npm install;",
-    "test": "jest --coverage -u"
+    "test": "jest --detectOpenHandles --coverage -u"
   },
   "jest": {
     "reporters": [
@@ -48,7 +48,7 @@
       "indent": 4
     }
   },
-  "author": "satwik",
+  "author": "",
   "license": "ISC",
   "testResultsProcessor": "jest-html-reporters",
   "devDependencies": {}
