@@ -23,7 +23,7 @@ describe("Data Driven Approach for testing Weather API", () => {
         sheetVals.map(el => {
           singleRequestObject(el).then(reqResp => {
             expect.assertions(1);
-            lg.verbose(
+            lg.verboseLog(
               "Verifying " +
                 reqResp.response.status +
                 " with " +

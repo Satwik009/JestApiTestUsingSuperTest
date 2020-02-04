@@ -17,9 +17,28 @@ class logger {
     if (isVerboseEnabled) this.log("--VERBOSE--" + d);
   }
 
+  async verboseLog(d) {
+    this.logToFile("--VERBOSE--" + d);
+  }
+
   async log(d) {
     try {
+      this.logToFile(d);
+      this.logToStdOut(d);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  logToFile(d) {
+    try {
       log_file.write(util.format(d) + "\n");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  logToStdOut(d) {
+    try {
       log_stdout.write(util.format(d) + "\n");
     } catch (error) {
       console.log(error);
