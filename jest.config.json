@@ -4,6 +4,7 @@
     [
       "jest-html-reporters",
       {
+        "pageTitle": "Tests Execution Results Report",
         "publicPath": "./output",
         "filename": "index.html",
         "expand": true
@@ -13,7 +14,8 @@
       "jest-stare",
       {
         "resultDir": "reports/jest-stare",
-        "reportTitle": "jestReport",
+        "reportTitle": "Tests Execution Results Report",
+        "reportHeadline":"Tests Execution Results Report",
         "additionalResultsProcessors": ["jest-html-reporters"],
         "testResultsProcessor": "jest-sonar-reporter",
         "coverageLink": "../../coverage/lcov-report/index.html",
