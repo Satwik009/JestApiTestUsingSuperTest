@@ -26,22 +26,8 @@
     "test": "jest --detectOpenHandles --coverage -u"
   },
   "jest": {
-    "reporters": [
-      "default",
-      [
-        "jest-html-reporters",
-        {
-          "publicPath": "./output",
-          "filename": "index.html",
-          "pageTitle": "Test Results Report",
-          "expand": true
-        }
-      ]
-    ],
-    "jest": {
-      "testEnvironment": "node",
-      "testResultsProcessor": "jest-sonar-reporter"
-    },
+    "testEnvironment": "node",
+    "testResultsProcessor": "jest-sonar-reporter",
     "jestSonar": {
       "reportPath": "reports",
       "reportFile": "test-report.xml",

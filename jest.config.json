@@ -7,6 +7,7 @@
         "pageTitle": "Tests Execution Results Report",
         "publicPath": "./output",
         "filename": "index.html",
+        "includeFailureMsg ":true,
         "expand": true
       }
     ],
