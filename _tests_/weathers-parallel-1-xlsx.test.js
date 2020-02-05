@@ -1,6 +1,6 @@
-const request = require("supertest");
 const excelUtils = require("../utils/excelUtils");
 const logger = require("../utils/logger");
+const request = require("../utils/requestUtils");
 
 const eu = new excelUtils();
 const lg = new logger();
@@ -22,7 +22,7 @@ describe("Data Driven Approach for testing Weather API", () => {
       sheetData.then(sheetVals => {
         const sheet = sheetVals.splice(1, sheetVals.length);
         sheet.map(el => {
-          singleRequestObject(el).then(reqResp => {
+          request.singleRequestObject(el).then(reqResp => {
             expect.assertions(1);
             lg.verboseLog(
               "Verifying " +
@@ -55,41 +55,3 @@ describe("Data Driven Approach for testing Weather API", () => {
     }
   });
 });
-
-async function singleRequestObject(dataRow) {
-  try {
-    lg.logStep("Executed for data-set -> " + dataRow);
-    var reqObj = new Object();
-
-    reqObj.method = dataRow[0];
-    reqObj.baseURL = dataRow[1];
-    reqObj.endPoint = dataRow[2];
-    reqObj.apiKey = dataRow[3];
-    reqObj.latitude = dataRow[4];
-    reqObj.longitude = dataRow[5];
-    reqObj.city = dataRow[6];
-    reqObj.httpstatus = dataRow[7];
-
-    reqObj.requestParams =
-      reqObj.endPoint +
-      "lat=" +
-      reqObj.latitude +
-      "&lon=" +
-      reqObj.longitude +
-      "&appid=" +
-      reqObj.apiKey;
-    lg.logStep("Data set provided request parameters: " + reqObj.requestParams);
-
-    const response = await request(reqObj.baseURL)
-      .get(reqObj.requestParams)
-      .set("accept", "application/json");
-
-    let reqResp = new Object();
-    reqResp.request = reqObj;
-    reqResp.response = response;
-
-    return reqResp;
-  } catch (error) {
-    lg.error(error);
-  }
-}
