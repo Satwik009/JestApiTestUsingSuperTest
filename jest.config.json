@@ -26,10 +26,5 @@
     ]
   ],
   "testEnvironment": "node",
-  "testResultsProcessor": "jest-sonar-reporter",
-  "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "test-report.xml",
-    "indent": 4
-  }
+  "testResultsProcessor": "jest-sonar-reporter"
 }

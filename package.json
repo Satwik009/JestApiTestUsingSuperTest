@@ -26,14 +26,10 @@
     "prestart": "npm install;",
     "test": "jest --detectOpenHandles --coverage -u"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "testResultsProcessor": "jest-sonar-reporter",
-    "jestSonar": {
-      "reportPath": "reports",
-      "reportFile": "test-report.xml",
-      "indent": 4
-    }
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "author": "",
   "license": "ISC",

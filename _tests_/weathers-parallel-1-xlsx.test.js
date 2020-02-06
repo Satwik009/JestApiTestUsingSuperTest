@@ -4,6 +4,7 @@ const request = require("../utils/requestUtils");
 
 const eu = new excelUtils();
 const lg = new logger();
+const rq = new request();
 
 var sheetData = eu.sheetAs2dArray("Data/WeatherData.xlsx", "Sheet1", false);
 
@@ -22,9 +23,9 @@ describe("Data Driven Approach for testing Weather API", () => {
       sheetData.then(sheetVals => {
         const sheet = sheetVals.splice(1, sheetVals.length);
         sheet.map(el => {
-          request.singleRequestObject(el).then(reqResp => {
+          rq.singleRequestObject(el).then(reqResp => {
             expect.assertions(1);
-            lg.verboseLog(
+            lg.verboseLogForced(
               "Verifying " +
                 reqResp.response.status +
                 " with " +

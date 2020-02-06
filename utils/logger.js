@@ -1,23 +1,33 @@
 var fs = require("fs");
 var util = require("util");
 
-var log_file = fs.createWriteStream("./debug.log", { flags: "w" });
+var log_file = fs.createWriteStream("debug.log", { flags: "a" });
 var log_stdout = process.stdout;
 
 var isVerboseEnabled = false;
 
 class logger {
+  async info(d) {
+    this.log("--INFO--" + d);
+  }
+
+  async warn(d) {
+    this.log("--WARN--" + d);
+  }
+
   async logStep(d) {
     this.log("--STEP--" + d);
   }
+
   async error(d) {
-    this.log("--ERROR OCCURED--" + d);
+    this.log("--ERROR--" + d);
   }
+
   async verbose(d) {
     if (isVerboseEnabled) this.log("--VERBOSE--" + d);
   }
 
-  async verboseLog(d) {
+  async verboseLogForced(d) {
     this.logToFile("--VERBOSE--" + d);
   }
 
@@ -37,6 +47,7 @@ class logger {
       console.log(error);
     }
   }
+
   logToStdOut(d) {
     try {
       log_stdout.write(util.format(d) + "\n");
