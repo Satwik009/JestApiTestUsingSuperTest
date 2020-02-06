@@ -6,9 +6,13 @@ const eu = new excelUtils();
 const lg = new logger();
 const rq = new request();
 
-var sheetData = eu.sheetAs2dArray("Data/WeatherData.xlsx", "Sheet1", false);
+var sheetData = eu.sheetAs2dArray(
+  "Data/weather-parallel-2-xlsx.xlsx",
+  "Sheet1",
+  false
+);
 
-describe("Data Driven Approach for testing Weather API", () => {
+describe("Data Driven Approach for parallel dynamic testing Weather API", () => {
   beforeAll(async () => {
     // rowSet = await excelReaderIns("Data/WeatherData.xlsx");
     // rowSet.splice(0, 1);
@@ -18,12 +22,13 @@ describe("Data Driven Approach for testing Weather API", () => {
     //Close Server and Printout the report
   });
 
-  test("Get Weather Details", async () => {
+  test("Get Weather Details and test its api dynamically", async () => {
     try {
       sheetData.then(sheetVals => {
+        const headerRow = sheetVals.splice(0, 1);
         const sheet = sheetVals.splice(1, sheetVals.length);
         sheet.map(el => {
-          rq.singleRequestObject(el).then(reqResp => {
+          rq.singleDynamicRequestObject(headerRow, el).then(reqResp => {
             expect.assertions(1);
             lg.verboseLogForced(
               "Verifying " +

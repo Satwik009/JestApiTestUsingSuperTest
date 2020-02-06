@@ -8,7 +8,7 @@ const rq = new request();
 
 var sheetData = eu.sheetAs2dArray("Data/WeatherData.xlsx", "Sheet1", false);
 
-describe("Data Driven Approach for testing Weather API", () => {
+describe("Data Driven Approach for Testing Weather API using Fixed Template", () => {
   beforeAll(async () => {
     // rowSet = await excelReaderIns("Data/WeatherData.xlsx");
     // rowSet.splice(0, 1);
@@ -18,7 +18,7 @@ describe("Data Driven Approach for testing Weather API", () => {
     //Close Server and Printout the report
   });
 
-  test("Get Weather Details", async () => {
+  test("Get Weather Details using Fixed Template", async () => {
     try {
       sheetData.then(sheetVals => {
         const sheet = sheetVals.splice(1, sheetVals.length);

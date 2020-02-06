@@ -1,7 +1,12 @@
 var fs = require("fs");
 var util = require("util");
+const dateUtils = require("./dateUtils");
 
-var log_file = fs.createWriteStream("debug.log", { flags: "a" });
+const dt = new dateUtils();
+
+var log_file = fs.createWriteStream("debug-" + dt.today() + ".log", {
+  flags: "w"
+});
 var log_stdout = process.stdout;
 
 var isVerboseEnabled = false;
