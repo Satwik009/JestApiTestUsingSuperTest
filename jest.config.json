@@ -7,7 +7,7 @@
         "pageTitle": "Tests Execution Results Report",
         "publicPath": "./output",
         "filename": "index.html",
-        "includeFailureMsg ":true,
+        "includeFailureMsg ": true,
         "expand": true
       }
     ],
@@ -16,7 +16,7 @@
       {
         "resultDir": "reports/jest-stare",
         "reportTitle": "Tests Execution Results Report",
-        "reportHeadline":"Tests Execution Results Report",
+        "reportHeadline": "Tests Execution Results Report",
         "additionalResultsProcessors": ["jest-html-reporters"],
         "testResultsProcessor": "jest-sonar-reporter",
         "coverageLink": "../../coverage/lcov-report/index.html",
@@ -24,5 +24,12 @@
         "jestGlobalConfigJson": "globalStuff.json"
       }
     ]
-  ]
+  ],
+  "testEnvironment": "node",
+  "testResultsProcessor": "jest-sonar-reporter",
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
+  }
 }
