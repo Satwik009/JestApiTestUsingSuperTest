@@ -1,7 +1,7 @@
 const request = require("supertest");
 const excelReaderIns = require("read-excel-file/node");
-const csvUtilsOld = require("../utils/csvUtilsOld");
-const logger = require("../utils/logger");
+const csvUtilsOld = require("../../utils/csvUtilsOld");
+const logger = require("../../utils/logger");
 
 let method;
 let baseURL;

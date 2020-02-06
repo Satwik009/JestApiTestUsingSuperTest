@@ -1,6 +1,6 @@
-const B = require("../src/samplerequest");
-const C = require("../src/sampleget");
-const D = require("../src/samplepost");
+const B = require("../../src/samplerequest");
+const C = require("../../src/sampleget");
+const D = require("../../src/samplepost");
 
 test("addition of two number", () => {
   var bc = new B();

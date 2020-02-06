@@ -1,6 +1,6 @@
-const excelUtils = require("../utils/excelUtils");
-const logger = require("../utils/logger");
-const request = require("../utils/requestUtils");
+const excelUtils = require("../../utils/excelUtils");
+const logger = require("../../utils/logger");
+const request = require("../../utils/requestUtils");
 
 const eu = new excelUtils();
 const lg = new logger();
