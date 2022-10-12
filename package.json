@@ -18,7 +18,7 @@
     "jest-stare": "^1.26.0",
     "mocha": "^7.0.1",
     "mocha-jenkins-reporter": "^0.4.2",
-    "read-excel-file": "^4.0.5",
+    "read-excel-file": "^5.5.0",
     "supertest": "^3.0.0",
     "xlsx-populate": "^1.20.1"
   },
