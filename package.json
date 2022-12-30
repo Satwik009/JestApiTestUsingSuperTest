@@ -16,7 +16,7 @@
     "jest-html-reporters": "^1.2.1",
     "jest-sonar-reporter": "^2.0.0",
     "jest-stare": "^1.26.0",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "mocha-jenkins-reporter": "^0.4.2",
     "read-excel-file": "^4.0.5",
     "supertest": "^3.0.0",
